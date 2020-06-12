@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Order online</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js"></script>
+    <meta name="description" content="Text to appear on Google Search">
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/menu.html">Menu</a></li>
+        <li><a href="/order.html">Order online</a></li>
+      </ul>
+    </header>
+    <div class="content-area">
+      <div class="content">
+        <div class="content-header">
+          <h1>About</h1>
+        </div>
+        <div class="content-body">
+          <h1>Order Online</h1>
+          <form action="order.php" method="post">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Item #1</td>
+                  <td>
+                    <select name="item-1">
+                      <option value="None">Please select...</option>
+                      <option value="baguette">Baguette</option>
+                      <option value="croissant-empty">Croissant (no fill)</option>
+                      <option value="croissant-choco">Croissant Chocolate</option>
+                      <option value="croissant-berry">Croissant Strawberry</option>
+                      <option value="pizza">Handmade pizza</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input name="qty-1" id="qty-1" type="number"><label for="qty-1">g</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Item #2</td>
+                  <td>
+                    <select name="item-2">
+                      <option value="None">Please select...</option>
+                      <option value="baguette">Baguette</option>
+                      <option value="croissant-empty">Croissant (no fill)</option>
+                      <option value="croissant-choco">Croissant Chocolate</option>
+                      <option value="croissant-berry">Croissant Strawberry</option>
+                      <option value="pizza">Handmade pizza</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input name="qty-2" id="qty-2" type="number"><label for="qty-1">g</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Item #3</td>
+                  <td>
+                    <select name="item-3">
+                      <option value="None">Please select...</option>
+                      <option value="baguette">Baguette</option>
+                      <option value="croissant-empty">Croissant (no fill)</option>
+                      <option value="croissant-choco">Croissant Chocolate</option>
+                      <option value="croissant-berry">Croissant Strawberry</option>
+                      <option value="pizza">Handmade pizza</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input name="qty-3" id="qty-1" type="number"><label for="qty-1">g</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Item #4</td>
+                  <td>
+                    <select name="item-4">
+                      <option value="None">Please select...</option>
+                      <option value="baguette">Baguette</option>
+                      <option value="croissant-empty">Croissant (no fill)</option>
+                      <option value="croissant-choco">Croissant Chocolate</option>
+                      <option value="croissant-berry">Croissant Strawberry</option>
+                      <option value="pizza">Handmade pizza</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input name="qty-4" id="qty-1" type="number"><label for="qty-1">g</label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit">Order now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <ul>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Yet another random link</a></li>
+      </ul>
+      <p>Copyright Bakery Store &copy;</p>
+  </body>
+</html>
