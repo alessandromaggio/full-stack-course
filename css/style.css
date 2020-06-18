@@ -1,0 +1,40 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #1E2019;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  margin: 0;
+  padding: 0.6rem;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #955E42;
+  color: #E6CCBE;
+}
+
+footer {
+  margin: 0;
+  padding: 0.6rem;
+  display: block;
+  width: 100%;
+  background-color: #955E42;
+  color: #E6CCBE;
+}
+
+.content-area {
+  width: 100%;
+}
+
+.content {
+  padding: 0.6rem;
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 4rem;
+}
