@@ -19,6 +19,15 @@ header {
   color: #E6CCBE;
 }
 
+header ul a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header ul {
+  list-style: none;
+}
+
 footer {
   margin: 0;
   padding: 0.6rem;
@@ -37,4 +46,25 @@ footer {
   max-width: 1000px;
   margin: auto;
   margin-bottom: 4rem;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label::before {
+  display: inline-block;
+  margin-right: 0.6em;
+  border-radius: 0.2em;
+  border: 2px solid #1E2019;
+  color: #1E2019;
+  height: 1em;
+  width: 1em;
+  background-color: #E6CCBE;
+  content: ' ';
+  text-align: center;
+}
+
+input[type=checkbox]:checked + label::before {
+  content: 'X';
 }
