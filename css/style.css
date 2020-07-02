@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -17,6 +21,8 @@ header {
   height: 60px;
   background-color: #955E42;
   color: #E6CCBE;
+  position: sticky;
+  top: 0;
 }
 
 header ul a {
@@ -26,6 +32,10 @@ header ul a {
 
 header ul {
   list-style: none;
+}
+
+header ul li {
+  display: inline-block;
 }
 
 footer {
