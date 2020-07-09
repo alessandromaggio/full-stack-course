@@ -78,3 +78,27 @@ input[type=checkbox] + label::before {
 input[type=checkbox]:checked + label::before {
   content: 'X';
 }
+
+.product-showcase {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  background-color: #E6CCBE;
+  border-radius: 0.2em;
+  padding: 0.6rem;
+  width: 300px;
+  margin-bottom: 1em;
+}
+
+.product > img {
+  width: 100%;
+}
+
+.product h4 {
+  margin: 0;
+  padding: 0;
+}
