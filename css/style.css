@@ -1,11 +1,16 @@
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+  font-weight: bold;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Georgia', serif;
   color: #1E2019;
 }
 
