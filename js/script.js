@@ -1,2 +1,2 @@
-// Notify about the page load
-alert("JavaScript loaded");
+var logMessage = "I am a log message for Full Stack Developers!";
+console.log(logMessage);
