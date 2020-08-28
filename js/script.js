@@ -1,9 +1,8 @@
-let num = 10;
-
-if (num % 2 === 1) {
-  console.log("Number is odd");
-} else if (num === 0) {
-  console.log("The value is zero");
-} else {
-  console.log("Number is even");
+let a = 0;
+let b = 1;
+while(a + b < 1000) {
+  let total = a + b;
+  console.log(a + ' + ' + b + ' = ' + total);
+  a = b;
+  b = total;
 }
