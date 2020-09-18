@@ -1,37 +1,36 @@
-function min(arr) {
-  let min = arr[0];
-  for(let i = 0; i < arr.length; i++) {
-    if (arr[i] < min) min = arr[i];
+class User {
+  constructor() {
+    this.name = null;
+    this.email = null;
+    this.password = null;
+    this.lastLogin = null;
   }
-  return min;
-}
 
-function max(arr) {
-  let max = arr[0];
-  for(let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) max = arr[i];
+  login(pass) {
+    return this.password === pass;
   }
-  return max;
 }
 
-function avg(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+class Administrator extends User {
+  constructor() {
+    super();
+    this.privileges = [];
   }
-  return sum / arr.length;
+
+  hasPrivilege(privilege) {
+    for(let i = 0; i < this.privileges.length; i++) {
+      if(this.privileges[i] === privilege) return true;
+    }
+    return false;
+  }
 }
 
-function calc(arr) {
-  if (arr.length === 0) return undefined;
-  return [
-    min(arr),
-    max(arr),
-    avg(arr)
-  ];
-}
+const user = new User();
+user.name = 'Jane Doe';
+user.email = 'jane@example.com';
+user.password = 'test';
 
-console.log(calc([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
-console.log(calc([10]));
-console.log(calc([-1, -40, 23, 12]));
-console.log(calc([]));
+const admin = new Administrator();
+admin.name = 'Admin';
+admin.password = 'secret';
+admin.privileges = ['create', 'edit', 'delete'];
