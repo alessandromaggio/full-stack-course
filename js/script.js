@@ -1,36 +1,58 @@
-class User {
-  constructor() {
-    this.name = null;
-    this.email = null;
-    this.password = null;
-    this.lastLogin = null;
+function createProductSelector(n) {
+  let select = document.createElement('select');
+  select.name = 'item-' + n;
+  let options = [
+    { value: 'None', label: 'Please select...' },
+    { value: 'baguette', label: 'Baguette' },
+    { value: 'croissant-empty', label: 'Croissant (no fill)' },
+    { value: 'croissant-choco', label: 'Croissant Chocolate' },
+    { value: 'croissant-berry', label: 'Croissant Strawberry' },
+    { value: 'pizza', label: 'Handmade pizza' }
+  ]
+  for(let i = 0; i < options.length; i++) {
+    let option = document.createElement('option');
+    option.value = options[i].value;
+    option.innerHTML = options[i].label;
+    select.appendChild(option);
   }
-
-  login(pass) {
-    return this.password === pass;
-  }
+  return select;
 }
 
-class Administrator extends User {
-  constructor() {
-    super();
-    this.privileges = [];
-  }
-
-  hasPrivilege(privilege) {
-    for(let i = 0; i < this.privileges.length; i++) {
-      if(this.privileges[i] === privilege) return true;
-    }
-    return false;
-  }
+function createQtyInput(n) {
+  let qty = document.createElement('input');
+  qty.name = 'qty-' + n;
+  qty.id = 'qty-' + n;
+  qty.type = 'number';
+  return qty;
 }
 
-const user = new User();
-user.name = 'Jane Doe';
-user.email = 'jane@example.com';
-user.password = 'test';
+function createOrderItem(n) {
+  let tr = document.createElement('tr');
+  let td1 = document.createElement('td');
+  td1.innerHTML = 'Item #' + n;
+  let td2 = document.createElement('td');
+  td2.appendChild(createProductSelector(n));
+  let qty = createQtyInput(n);
+  let td3 = document.createElement('td');
+  td3.appendChild(qty);
+  let label = document.createElement('label');
+  label.setAttribute('for', qty.id);
+  label.innerHTML = 'g';
+  td3.appendChild(label);
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+  return tr;
+}
 
-const admin = new Administrator();
-admin.name = 'Admin';
-admin.password = 'secret';
-admin.privileges = ['create', 'edit', 'delete'];
+function addOrderItem(n) {
+  document.getElementById('order-table')
+    .querySelector('tbody')
+    .appendChild(createOrderItem(n));
+}
+
+function getOrderItemsCount() {
+  return document.querySelectorAll('#order-table tbody > tr').length;
+}
+
+addOrderItem(getOrderItemsCount() + 1);
