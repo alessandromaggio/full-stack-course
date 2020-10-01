@@ -26,8 +26,24 @@ function createQtyInput(n) {
   return qty;
 }
 
+function removeElement(n) {
+  document.querySelector('#order-table > tbody')
+    .removeChild(document.getElementById('row-' + n));
+}
+
+function createRemoveButton(n) {
+  let btn = document.createElement('button');
+  btn.type = 'button';
+  btn.innerHTML = '-';
+  btn.addEventListener('click', function () {
+    removeElement(n);
+  });
+  return btn;
+}
+
 function createOrderItem(n) {
   let tr = document.createElement('tr');
+  tr.id = 'row-' + n;
   let td1 = document.createElement('td');
   td1.innerHTML = 'Item #' + n;
   let td2 = document.createElement('td');
@@ -39,9 +55,12 @@ function createOrderItem(n) {
   label.setAttribute('for', qty.id);
   label.innerHTML = 'g';
   td3.appendChild(label);
+  let td4 = document.createElement('td');
+  td4.appendChild(createRemoveButton(n));
   tr.appendChild(td1);
   tr.appendChild(td2);
   tr.appendChild(td3);
+  tr.appendChild(td4);
   return tr;
 }
 
@@ -55,4 +74,6 @@ function getOrderItemsCount() {
   return document.querySelectorAll('#order-table tbody > tr').length;
 }
 
-addOrderItem(getOrderItemsCount() + 1);
+document.getElementById('additem').addEventListener('click', function() {
+  addOrderItem(getOrderItemsCount() + 1);
+})
