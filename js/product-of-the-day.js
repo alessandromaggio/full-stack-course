@@ -1,6 +1,10 @@
-axios.get('pod.json')
-  .then(function (response) {
+async function loadPOD() {
+  try {
+    const response = await axios('pod.json');
     document.getElementById('pod').innerHTML = response.data.text;
-  }).catch(function (error) {
-    console.log(error)
-  });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+loadPOD();
