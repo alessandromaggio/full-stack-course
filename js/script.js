@@ -77,3 +77,11 @@ function getOrderItemsCount() {
 document.getElementById('additem').addEventListener('click', function() {
   addOrderItem(getOrderItemsCount() + 1);
 })
+
+if (window.localStorage.getItem('notes')) {
+  document.getElementById('notes').value = window.localStorage.getItem('notes');
+}
+
+document.getElementById('notes').addEventListener('input', function(e) {
+  window.localStorage.setItem('notes', e.target.value);
+});
