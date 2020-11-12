@@ -2,7 +2,7 @@
   <div id="app">
     <app-header/>
     <div id="main" class="container">
-      <order-form/>
+      <router-view></router-view>
     </div>
     <app-footer/>
   </div>
@@ -11,14 +11,12 @@
 <script>
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
-import OrderForm from './components/OrderForm';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
-    OrderForm,
   },
 }
 </script>
