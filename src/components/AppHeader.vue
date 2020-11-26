@@ -15,20 +15,17 @@ export default {
   </header>
 </template>
 
-<style>
-.b-header {
-  height: 50px;
-  background-color: #F2E7C7;
-}
+<style lang="sass">
+.b-header
+  height: 50px
+  background-color: #F2E7C7
 
-.b-header__logo-box {
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+.b-header__logo-box
+  height: 50px
+  display: flex
+  flex-direction: column
+  justify-content: center
 
-.b-header__logo {
-  font-size: 1.3em;
-}
+.b-header__logo
+  font-size: 1.3em
 </style>

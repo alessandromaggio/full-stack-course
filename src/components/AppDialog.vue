@@ -31,38 +31,33 @@ export default {
 </template>
 
 
-<style>
+<style lang="sass">
 .app-dialog__overlay,
-.app-dialog__underlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-}
+.app-dialog__underlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  display: flex
+  justify-content: space-around
 
-.app-dialog__overlay {
-  z-index: 101;
-}
+.app-dialog__overlay
+  z-index: 101
 
-.app-dialog__underlay {
-  background-color: #000;
-  opacity: 0.75;
-  z-index: 100;
-}
+.app-dialog__underlay
+  background-color: #000
+  opacity: 0.75
+  z-index: 100
 
-.app-dialog__vcenter {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+.app-dialog__vcenter
+  display: flex
+  flex-direction: column
+  justify-content: space-around
 
-.app-dialog__dialog {
-  padding: 1rem;
-  border-radius: 4px;
-  background-color: white;
-  display: inline-block;
-}
+.app-dialog__dialog
+  padding: 1rem
+  border-radius: 4px
+  background-color: white
+  display: inline-block
 </style>

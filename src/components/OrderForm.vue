@@ -46,16 +46,14 @@ export default {
   </div>
 </template>
 
-<style>
-.b-order-form {
-  margin: 20px 0;
-  margin-bottom: 50px;
-}
+<style lang="sass">
+.b-order-form
+  margin: 20px 0
+  margin-bottom: 50px
 
-.b-order-form__items {
-  max-width: 600px;
-  border: 1px solid #2c3e50;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
+.b-order-form__items
+  max-width: 600px
+  border: 1px solid #2c3e50
+  border-radius: 4px
+  margin-bottom: 10px
 </style>
