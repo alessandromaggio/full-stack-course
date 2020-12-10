@@ -1,19 +1,29 @@
-const express = require('express');
+import express from 'express';
+import loaders from './loaders';
+import globalEmitter from './loaders/eventEmitter';
+
 const port = 3000;
 
-const app = express();
-app.use(express.json());
+async function startServer() {
+  const app = express();
+  await loaders({ app });
 
-app.get('/alive', (req, res, next) => {
-  res.send('OK');
-  next();
-});
+  app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url} ${res.statusCode}`);
-  next();
-});
+  app.get('/alive', (req, res, next) => {
+    res.send('OK');
+    globalEmitter.emit('log_message', { time: Date.now(), message: 'A message' })
+    next();
+  });
 
-app.listen(port, () => {
-  console.log('Started');
-});
+  app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url} ${res.statusCode}`);
+    next();
+  });
+
+  app.listen(port, () => {
+    console.log('Started');
+  });
+}
+
+startServer();
